@@ -46,6 +46,6 @@ const io = new IntersectionObserver(entries => {
     }
   });
 }, { rootMargin: '-40% 0px -55% 0px' });
-['top', 'services', 'why', 'works', 'process', 'contact'].forEach(id => {
+['top','paving','types','solar','extra','why','works','process','contact'].forEach(id => {
   const el = document.getElementById(id); if (el) io.observe(el);
 });
