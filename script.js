@@ -85,7 +85,7 @@ const sio = new IntersectionObserver(entries => {
     if (en.isIntersecting) links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + en.target.id));
   });
 }, { rootMargin: '-45% 0px -50% 0px' });
-['plitka', 'solar', 'gazoblok', 'dahy', 'pidloga', 'muzh', 'contact'].forEach(id => { const el = document.getElementById(id); if (el) sio.observe(el); });
+['about', 'services', 'plitka', 'solar', 'gazoblok', 'dahy', 'pidloga', 'muzh', 'contact'].forEach(id => { const el = document.getElementById(id); if (el) sio.observe(el); });
 
 // форма (заглушка: підключіть свій backend / Telegram / Formspree)
 const form = $('#leadForm'), msg = $('.form__msg', form);
