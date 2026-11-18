@@ -228,3 +228,7 @@ body.loaded .hero__btns[data-fade]{transition-delay:2.1s}
   [data-reveal],[data-fade],.ln>span,[data-split] .w>span,.chapter .ticks li{opacity:1!important;transform:none!important}
   .intro{display:none}
 }
+.phone-big{display:inline-flex;flex-direction:column;font-family:"Oswald",sans-serif;font-size:clamp(34px,5vw,56px);font-weight:600;color:var(--gold);letter-spacing:.04em;line-height:1.1;transition:transform .4s var(--ease),color .3s}
+.phone-big small{font-family:"Manrope",sans-serif;font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.phone-big:hover{color:#fff;transform:translateX(6px)}
+@media(max-width:980px){.header__phone{display:none}}
