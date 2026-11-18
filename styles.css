@@ -39,7 +39,9 @@ body.loaded .intro{transform:translateY(-100%)}
 /* ---- шапка ---- */
 .header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;gap:28px;padding:18px 36px;transition:background .4s,padding .4s,backdrop-filter .4s;transform:translateY(-100%);opacity:0}
 body.loaded .header{transform:none;opacity:1;transition:transform 1s var(--ease) 1s,opacity 1s 1s,background .4s,padding .4s}
-.header.scrolled{background:rgba(7,9,12,.82);backdrop-filter:blur(14px);padding:10px 36px;box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.header::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(7,9,12,.82);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(255,255,255,.06);opacity:0;transition:opacity .4s}
+.header.scrolled{padding:10px 36px}
+.header.scrolled::before{opacity:1}
 .logo{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:700;letter-spacing:.1em;white-space:nowrap}
 .nav{display:flex;gap:26px;margin-left:auto;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.08em}
 .nav a{position:relative;padding:6px 0;opacity:.85;transition:.3s}
@@ -204,8 +206,8 @@ body.loaded .hero__btns[data-fade]{transition-delay:2.1s}
 @media(max-width:980px){
   .header{padding:14px 20px}
   .burger{display:block;z-index:2}
-  .nav{position:fixed;inset:0;background:rgba(5,7,10,.97);flex-direction:column;justify-content:center;align-items:center;gap:22px;font-size:22px;transform:translateY(-100%);transition:transform .7s var(--ease);margin:0}
-  .nav.open{transform:none}
+  .nav{position:fixed;inset:0;height:100dvh;background:rgba(5,7,10,.98);flex-direction:column;justify-content:center;align-items:center;gap:18px;font-size:clamp(17px,5.4vw,22px);text-align:center;padding:80px 20px 30px;overflow-y:auto;transform:translateY(-100%);visibility:hidden;transition:transform .7s var(--ease),visibility 0s .7s;margin:0}
+  .nav.open{transform:none;visibility:visible;transition:transform .7s var(--ease),visibility 0s}
   .chapter__inner,.chapter--right .chapter__inner{grid-template-columns:1fr;direction:ltr;gap:0}
   .num{font-size:110px;margin-bottom:6px}
   .chapter__shade,.chapter--right .chapter__shade{background:linear-gradient(0deg,rgba(5,7,10,.96) 15%,rgba(5,7,10,.6)),linear-gradient(180deg,var(--bg),transparent 12%)}
